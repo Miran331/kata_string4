@@ -1,7 +1,9 @@
 package hiber.config;
 
+import hiber.MainApp;
 import hiber.model.Car;
 import hiber.model.User;
+import hiber.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,6 +27,13 @@ public class AppConfig {
 
    @Autowired
    private Environment env;
+
+   @Bean
+   public MainApp mainApp(UserService userService) {
+      return new MainApp(userService);
+   }
+
+
 
    @Bean
    public DataSource getDataSource() {
