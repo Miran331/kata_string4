@@ -14,13 +14,13 @@ public class User {
    @OneToOne(cascade = CascadeType.ALL)
    private Car car;
 
-   @Column(name = "name")
+   @Column
    private String firstName;
 
-   @Column(name = "last_name")
+   @Column
    private String lastName;
 
-   @Column(name = "email")
+   @Column
    private String email;
 
 
