@@ -25,8 +25,13 @@ import java.util.Properties;
 @ComponentScan(value = "hiber")
 public class AppConfig {
 
-   @Autowired
+
    private Environment env;
+
+   @Autowired
+   public AppConfig(Environment env) {
+      this.env = env;
+   }
 
    @Bean
    public MainApp mainApp(UserService userService) {
